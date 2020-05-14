@@ -19,7 +19,7 @@ library(dplyr)
 # covid19 = read.csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')   
 # 
 # write.csv(covid19, "Covid19.csv")
-# 
+ 
 # covid    <- read.csv("Covid19.csv")
 ## View(covid)
 #
@@ -28,8 +28,7 @@ library(dplyr)
 #                   Region     = region,
 #                   Week       = week,
 #                   Confirmed  = total_cases,
-#                   Deaths     = total_deaths,
-#                   Population = population
+#                   Deaths     = total_deaths
 #                  )
 
 # C. BUILD YOUR SHINY APP ----
@@ -68,7 +67,7 @@ server<-function(input, output, session) {
   output$table1 <- DT::renderDataTable({DT::datatable(Covid19)})
   
   output$plot <- renderPlotly(
-    {ggplotly(ggplot(Covid19, aes(Population, Deaths, color = Region)) +
+    {ggplotly(ggplot(Covid19, aes(Confirmed, Deaths, color = Region)) +
                 geom_point(aes(size = Confirmed, frame = Week, ids = Country)) +
                 scale_x_log10())%>% 
         animation_opts(1000,easing="elastic",redraw=FALSE)})
