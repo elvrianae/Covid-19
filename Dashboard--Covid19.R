@@ -16,21 +16,21 @@ library(dplyr)
 # B. PREPARE YOUR DATABASE  ----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#covid19 = read.csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')   
- 
-#write.csv(covid19, "Covid19.csv")
- 
-covid    <- read.csv("Covid19.csv")
-View(covid)
-
-Covid19  <- select(covid,
-                   Country    = location,
-                   Region     = region,
-                   Week       = week,
-                   Confirmed  = total_cases,
-                   Deaths     = total_deaths,
-                   Population = population
-                  )
+# covid19 = read.csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')   
+# 
+# write.csv(covid19, "Covid19.csv")
+# 
+# covid    <- read.csv("Covid19.csv")
+## View(covid)
+#
+# Covid19  <- select(covid,
+#                   Country    = location,
+#                   Region     = region,
+#                   Week       = week,
+#                   Confirmed  = total_cases,
+#                   Deaths     = total_deaths,
+#                   Population = population
+#                  )
 
 # C. BUILD YOUR SHINY APP ----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
